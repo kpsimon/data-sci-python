@@ -72,10 +72,10 @@ def card_game(p1_bet, p2_bet):
 	while not p2_bet.isdigit():
 		p2_bet = input("Invalid bet. Player 2 enter your bet:")
 
-	p1_card = deck[random.randint(0,len(deck)-1)]%13
+	p1_card = deck[random.randint(0,len(deck))]%13
 	deck.remove(p1_card)
 
-	p2_card = deck[random.randint(0,len(deck)-1)]%13
+	p2_card = deck[random.randint(0,len(deck))]%13
 
 	if p1_card == 0 or p1_card == 1:
 		p1_card += 13
@@ -105,7 +105,7 @@ def roulette(guess,bet, money):
 	answers = list(range(0,36))
 	answers.append("00")
 
-	ball_roll = answers[random.randint(0,len(answers)-1)]
+	ball_roll = answers[random.randint(0,len(answers))]
 
 	if guess.upper() == "EVEN":
 		if ball_roll % 2 == 0 and ball_roll != 0 and ball_roll != "00":
